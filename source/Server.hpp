@@ -7,26 +7,23 @@
 ///                                                                           
 #pragma once
 #include "Shared.hpp"
-#include "Client.hpp"
 #include <Flow/Verbs/Create.hpp>
 
 
 ///                                                                           
-///   Server                                                                  
+///   Network server                                                          
 ///                                                                           
 /// Produces shared objects and syncronizes them with all connected clients.  
 ///                                                                           
-struct Server final : A::Unit, ProducedFrom<Network> {
+struct Server final : A::Server, ProducedFrom<Network> {
    LANGULUS(ABSTRACT) false;
    LANGULUS(PRODUCER) Network;
-   LANGULUS_BASES(A::Unit);
+   LANGULUS_BASES(A::Server);
    LANGULUS_VERBS(Verbs::Create);
 
 private:
    // List of synchronized objects                                      
    TFactory<Shared> mShared;
-   // List of connected clients                                         
-   TFactory<Client> mClients;
 
 public:
     Server(Network*, const Neat&);

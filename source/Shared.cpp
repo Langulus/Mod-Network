@@ -6,13 +6,25 @@
 /// SPDX-License-Identifier: GPL-3.0-or-later                                 
 ///                                                                           
 #include "Shared.hpp"
-#include "Network.hpp"
+#include "Server.hpp"
+#include "Client.hpp"
 
 
-/// Shared object construction                                                
+/// Shared object construction (server-side)                                  
 ///   @param producer - the producer                                          
 ///   @param descriptor - instructions for configuring the shared object      
 Shared::Shared(Server* producer, const Neat& descriptor)
+   : Resolvable   {this}
+   , ProducedFrom {producer, descriptor} {
+   VERBOSE_NETWORK("Initializing...");
+   Couple(descriptor);
+   VERBOSE_NETWORK("Initialized");
+}
+
+/// Shared object construction (client-side)                                  
+///   @param producer - the producer                                          
+///   @param descriptor - instructions for configuring the shared object      
+Shared::Shared(Client* producer, const Neat& descriptor)
    : Resolvable   {this}
    , ProducedFrom {producer, descriptor} {
    VERBOSE_NETWORK("Initializing...");

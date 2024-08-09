@@ -6,20 +6,29 @@
 /// SPDX-License-Identifier: GPL-3.0-or-later                                 
 ///                                                                           
 #pragma once
-#include "Common.hpp"
+#include "Shared.hpp"
+#include <Flow/Verbs/Create.hpp>
 
 
 ///                                                                           
 ///   Network client                                                          
 ///                                                                           
-struct Client final : A::Unit, ProducedFrom<Network> {
+/// Produces shared objects and syncronizes them with a connected server.     
+///                                                                           
+struct Client final : A::Client, ProducedFrom<Network> {
    LANGULUS(ABSTRACT) false;
    LANGULUS(PRODUCER) Network;
-   LANGULUS_BASES(A::Unit);
+   LANGULUS_BASES(A::Client);
+   LANGULUS_VERBS(Verbs::Create);
+
+private:
+   // List of synchronized objects                                      
+   TFactory<Shared> mShared;
 
 public:
-   Client(Network*, const Neat&);
+    Client(Network*, const Neat&);
    ~Client();
 
+   void Create(Verb&);
    void Refresh();
 };

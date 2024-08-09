@@ -14,7 +14,8 @@
 ///   @param descriptor - instructions for configuring the GUI                
 Client::Client(Network* producer, const Neat& descriptor)
    : Resolvable   {this}
-   , ProducedFrom {producer, descriptor} {
+   , ProducedFrom {producer, descriptor}
+   , mShared      {this} {
    VERBOSE_NETWORK("Initializing...");
    Couple(descriptor);
    VERBOSE_NETWORK("Initialized");
@@ -23,6 +24,12 @@ Client::Client(Network* producer, const Neat& descriptor)
 /// Shutdown the client                                                       
 Client::~Client() {
 
+}
+
+/// Produce shared objects                                                    
+///   @param verb - creation verb to satisfy                                  
+void Client::Create(Verb& verb) {
+   mShared.Create(verb);
 }
 
 /// React on environmental change                                             

@@ -12,11 +12,10 @@
 /// Gatherer construction                                                     
 ///   @param producer - the system producer                                   
 ///   @param descriptor - instructions for configuring the server             
-Server::Server(InputSDL* producer, const Neat& descriptor)
+Server::Server(Network* producer, const Neat& descriptor)
    : Resolvable   {this}
    , ProducedFrom {producer, descriptor}
-   , mShared      {this}
-   , mClients     {this} {
+   , mShared      {this} {
    VERBOSE_NETWORK("Initializing...");
    Couple(descriptor);
    VERBOSE_NETWORK("Initialized");
@@ -27,11 +26,10 @@ Server::~Server() {
 
 }
 
-/// Produce shared objects and clients                                        
+/// Produce shared objects                                                    
 ///   @param verb - creation verb to satisfy                                  
 void Server::Create(Verb& verb) {
    mShared.Create(verb);
-   mClients.Create(verb);
 }
 
 /// React on environmental change                                             

@@ -8,6 +8,7 @@
 #pragma once
 #include <Langulus.hpp>
 #include <Flow/Factory.hpp>
+#include <Langulus/Network.hpp>
 
 using namespace Langulus;
 

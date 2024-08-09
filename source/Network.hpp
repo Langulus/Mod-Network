@@ -16,9 +16,9 @@
 ///                                                                           
 /// Manages and produces clients/servers                                      
 ///                                                                           
-struct Network final : A::Module {
+struct Network final : A::Network {
    LANGULUS(ABSTRACT) false;
-   LANGULUS_BASES(A::Module);
+   LANGULUS_BASES(A::Network);
    LANGULUS_VERBS(Verbs::Create);
 
 private:
