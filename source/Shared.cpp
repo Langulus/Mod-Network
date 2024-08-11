@@ -10,21 +10,10 @@
 #include "Client.hpp"
 
 
-/// Shared object construction (server-side)                                  
+/// Shared object construction                                                
 ///   @param producer - the producer                                          
 ///   @param descriptor - instructions for configuring the shared object      
-Shared::Shared(Server* producer, const Neat& descriptor)
-   : Resolvable   {this}
-   , ProducedFrom {producer, descriptor} {
-   VERBOSE_NETWORK("Initializing...");
-   Couple(descriptor);
-   VERBOSE_NETWORK("Initialized");
-}
-
-/// Shared object construction (client-side)                                  
-///   @param producer - the producer                                          
-///   @param descriptor - instructions for configuring the shared object      
-Shared::Shared(Client* producer, const Neat& descriptor)
+Shared::Shared(A::NetworkUnit* producer, const Neat& descriptor)
    : Resolvable   {this}
    , ProducedFrom {producer, descriptor} {
    VERBOSE_NETWORK("Initializing...");
