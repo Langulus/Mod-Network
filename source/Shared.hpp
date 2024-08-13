@@ -14,10 +14,10 @@
 ///                                                                           
 /// Dispatches any events on the network.                                     
 ///                                                                           
-struct Shared final : A::NetworkUnit, ProducedFrom<A::NetworkUnit> {
+struct Shared final : A::Shared, ProducedFrom<A::NetworkUnit> {
    LANGULUS(ABSTRACT) false;
    LANGULUS(PRODUCER) A::NetworkUnit;
-   LANGULUS_BASES(A::NetworkUnit);
+   LANGULUS_BASES(A::Shared);
 
 public:
    Shared(A::NetworkUnit*, const Neat&);
