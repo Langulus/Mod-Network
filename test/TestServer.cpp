@@ -29,7 +29,7 @@ SCENARIO("Server creation", "[network]") {
             auto shared = root.CreateUnit<A::Shared>();
 
             // Update once                                              
-            root.Update(Time::zero());
+            root.Update({});
             root.DumpHierarchy();
 
             REQUIRE(server.GetCount() == 1);
@@ -49,7 +49,7 @@ SCENARIO("Server creation", "[network]") {
             auto shared = root.CreateUnitToken("Shared");
 
             // Update once                                              
-            root.Update(Time::zero());
+            root.Update({});
             root.DumpHierarchy();
 
             REQUIRE(server.GetCount() == 1);
