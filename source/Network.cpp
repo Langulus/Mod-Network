@@ -20,8 +20,8 @@ LANGULUS_DEFINE_MODULE(
 Network::Network(Runtime* runtime, const Neat&)
    : Resolvable{this}
    , A::Module {runtime}
-   , mClients {this}
-   , mServers {this} {
+   /*, mClients {this}
+   , mServers {this}*/ {
    VERBOSE_NETWORK("Initializing...");
    VERBOSE_NETWORK("Initialized");
 }
@@ -41,6 +41,6 @@ bool Network::Update(Time deltaTime) {
 /// Create/Destroy clients/servers                                            
 ///   @param verb - the creation/destruction verb                             
 void Network::Create(Verb& verb) {
-   mClients.Create(verb);
-   mServers.Create(verb);
+   mClients.Create(this, verb);
+   mServers.Create(this, verb);
 }

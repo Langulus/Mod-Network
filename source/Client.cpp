@@ -15,7 +15,7 @@
 Client::Client(Network* producer, const Neat& descriptor)
    : Resolvable   {this}
    , ProducedFrom {producer, descriptor}
-   , mShared      {this} {
+   /*, mShared      {this}*/ {
    VERBOSE_NETWORK("Initializing...");
    Couple(descriptor);
    VERBOSE_NETWORK("Initialized");
@@ -29,7 +29,7 @@ Client::~Client() {
 /// Produce shared objects                                                    
 ///   @param verb - creation verb to satisfy                                  
 void Client::Create(Verb& verb) {
-   mShared.Create(verb);
+   mShared.Create(this, verb);
 }
 
 /// React on environmental change                                             
