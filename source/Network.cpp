@@ -18,10 +18,8 @@ LANGULUS_DEFINE_MODULE(
 ///   @param runtime - the runtime that owns the module                       
 ///   @param descriptor - instructions for configuring the module             
 Network::Network(Runtime* runtime, const Neat&)
-   : Resolvable{this}
-   , A::Module {runtime}
-   /*, mClients {this}
-   , mServers {this}*/ {
+   : Resolvable {this}
+   , A::Module  {runtime} {
    VERBOSE_NETWORK("Initializing...");
    VERBOSE_NETWORK("Initialized");
 }

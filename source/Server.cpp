@@ -14,8 +14,7 @@
 ///   @param descriptor - instructions for configuring the server             
 Server::Server(Network* producer, const Neat& descriptor)
    : Resolvable   {this}
-   , ProducedFrom {producer, descriptor}
-   /*, mShared      {this}*/ {
+   , ProducedFrom {producer, descriptor} {
    VERBOSE_NETWORK("Initializing...");
    Couple(descriptor);
    VERBOSE_NETWORK("Initialized");
