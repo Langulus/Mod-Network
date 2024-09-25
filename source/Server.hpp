@@ -13,7 +13,7 @@
 ///                                                                           
 ///   Network server                                                          
 ///                                                                           
-/// Produces shared objects and syncronizes them with all connected clients.  
+/// Produces shared objects and syncronizes them with all connected clients   
 ///                                                                           
 struct Server final : A::Server, ProducedFrom<Network> {
    LANGULUS(ABSTRACT) false;
@@ -26,7 +26,7 @@ private:
    TFactory<Shared> mShared;
 
 public:
-    Server(Network*, const Neat&);
+    Server(Network*, Describe);
    ~Server();
 
    void Create(Verb&);

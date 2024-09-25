@@ -12,7 +12,7 @@
 /// Gatherer construction                                                     
 ///   @param producer - the system producer                                   
 ///   @param descriptor - instructions for configuring the server             
-Server::Server(Network* producer, const Neat& descriptor)
+Server::Server(Network* producer, Describe descriptor)
    : Resolvable   {this}
    , ProducedFrom {producer, descriptor} {
    VERBOSE_NETWORK("Initializing...");

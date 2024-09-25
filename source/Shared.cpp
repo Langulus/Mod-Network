@@ -13,7 +13,7 @@
 /// Shared object construction                                                
 ///   @param producer - the producer                                          
 ///   @param descriptor - instructions for configuring the shared object      
-Shared::Shared(A::NetworkUnit* producer, const Neat& descriptor)
+Shared::Shared(A::NetworkUnit* producer, Describe descriptor)
    : Resolvable   {this}
    , ProducedFrom {producer, descriptor} {
    VERBOSE_NETWORK("Initializing...");

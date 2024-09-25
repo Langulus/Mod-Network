@@ -12,7 +12,7 @@
 /// Gatherer construction                                                     
 ///   @param producer - the system producer                                   
 ///   @param descriptor - instructions for configuring the GUI                
-Client::Client(Network* producer, const Neat& descriptor)
+Client::Client(Network* producer, Describe descriptor)
    : Resolvable   {this}
    , ProducedFrom {producer, descriptor} {
    VERBOSE_NETWORK("Initializing...");

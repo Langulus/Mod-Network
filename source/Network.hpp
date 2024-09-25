@@ -28,7 +28,7 @@ private:
    TFactory<Server> mServers;
 
 public:
-    Network(Runtime*, const Neat&);
+    Network(Runtime*, Describe);
    ~Network();
 
    bool Update(Time);
