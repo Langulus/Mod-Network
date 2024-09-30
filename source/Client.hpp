@@ -26,7 +26,7 @@ private:
    TFactory<Shared> mShared;
 
 public:
-    Client(Network*, Describe);
+    Client(Network*, const Many&);
    ~Client();
 
    void Create(Verb&);
