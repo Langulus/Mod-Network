@@ -28,8 +28,7 @@ private:
    TFactory<Server> mServers;
 
 public:
-    Network(Runtime*, const Many&);
-   ~Network();
+   Network(Runtime*, const Many&);
 
    bool Update(Time);
    void Create(Verb&);

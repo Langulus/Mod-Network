@@ -24,11 +24,6 @@ Network::Network(Runtime* runtime, const Many&)
    VERBOSE_NETWORK("Initialized");
 }
 
-///                                                                           
-Network::~Network() {
-
-}
-
 /// Module update routine                                                     
 ///   @param deltaTime - time between updates                                 
 ///   @return false if the UI requested exit                                  
