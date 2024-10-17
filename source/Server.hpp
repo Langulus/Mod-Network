@@ -26,9 +26,9 @@ private:
    TFactory<Shared> mShared;
 
 public:
-    Server(Network*, const Many&);
-   ~Server();
+   Server(Network*, const Many&);
 
    void Create(Verb&);
    void Refresh();
+   void Teardown();
 };

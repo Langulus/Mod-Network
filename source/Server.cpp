@@ -20,9 +20,9 @@ Server::Server(Network* producer, const Many& descriptor)
    VERBOSE_NETWORK("Initialized");
 }
 
-/// Shutdown the module                                                       
-Server::~Server() {
-
+/// First stage destruction                                                   
+void Server::Teardown() {
+   mShared.Teardown();
 }
 
 /// Produce shared objects                                                    

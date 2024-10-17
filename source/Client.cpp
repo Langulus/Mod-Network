@@ -20,9 +20,9 @@ Client::Client(Network* producer, const Many& descriptor)
    VERBOSE_NETWORK("Initialized");
 }
 
-/// Shutdown the client                                                       
-Client::~Client() {
-
+/// First stage destruction                                                   
+void Client::Teardown() {
+   mShared.Teardown();
 }
 
 /// Produce shared objects                                                    
