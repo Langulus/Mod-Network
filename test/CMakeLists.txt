@@ -4,19 +4,8 @@ file(GLOB_RECURSE
 	*.cpp
 )
 
-add_executable(LangulusModNetworkTest ${LANGULUS_MOD_NETWORK_TEST_SOURCES})
-
-target_link_libraries(LangulusModNetworkTest
-	PRIVATE		Langulus
-				Catch2
-)
-
-add_dependencies(LangulusModNetworkTest
-	LangulusModNetwork
-)
-
-add_test(
-	NAME		LangulusModNetworkTest
-	COMMAND		LangulusModNetworkTest
-	WORKING_DIRECTORY ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}
+add_langulus_test(LangulusModNetworkTest
+	SOURCES			${LANGULUS_MOD_NETWORK_TEST_SOURCES}
+	LIBRARIES		Langulus
+	DEPENDENCIES    LangulusModNetwork
 )
