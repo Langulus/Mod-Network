@@ -33,7 +33,7 @@ void Network::Teardown() {
 /// Module update routine                                                     
 ///   @param deltaTime - time between updates                                 
 ///   @return false if the UI requested exit                                  
-bool Network::Update(Time deltaTime) {
+bool Network::Update(Time) {
    return true;
 }
 
