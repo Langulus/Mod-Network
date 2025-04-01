@@ -6,6 +6,7 @@
 /// SPDX-License-Identifier: GPL-3.0-or-later                                 
 ///                                                                           
 #include "Network.hpp"
+#include <Langulus/Profiler.hpp>
 
 LANGULUS_DEFINE_MODULE(
    Network, 0, "Network",
@@ -34,6 +35,7 @@ void Network::Teardown() {
 ///   @param deltaTime - time between updates                                 
 ///   @return false if the UI requested exit                                  
 bool Network::Update(Time) {
+   LANGULUS(PROFILE);
    return true;
 }
 
