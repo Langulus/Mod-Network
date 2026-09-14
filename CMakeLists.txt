@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.28)
+cmake_minimum_required(VERSION 3.30)
 project(LangulusModNetwork
     VERSION         1.0.0
     DESCRIPTION     "Langulus plug-in module that provides networking client/server capabilities"
