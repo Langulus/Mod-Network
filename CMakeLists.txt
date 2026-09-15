@@ -14,7 +14,7 @@ file(GLOB_RECURSE
 # Build the module                                                              
 add_langulus_mod(LangulusModNetwork ${LANGULUS_MOD_NETWORK_SOURCES})
 
-if(LANGULUS_TESTING)
+if(LANGULUS_OPTION_TESTING)
 	enable_testing()
     add_subdirectory(test)
 endif()
