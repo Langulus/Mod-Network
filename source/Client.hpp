@@ -27,7 +27,7 @@ private:
    TFactory<Shared> mShared;
 
 public:
-   Client(Network*, const Many&);
+   Client(Network*, Many const&);
 
    void Create(Verb&);
    void Refresh();

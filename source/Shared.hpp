@@ -21,7 +21,7 @@ struct Shared final : A::Shared, ProducedFrom<A::NetworkUnit> {
    LANGULUS_BASES(A::Shared);
 
 public:
-   Shared(A::NetworkUnit*, const Many&);
+   Shared(A::NetworkUnit*, Many const&);
    
    void Refresh();
 };
