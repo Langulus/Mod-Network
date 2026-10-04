@@ -16,8 +16,8 @@
 /// Dispatches any events on the network.                                     
 ///                                                                           
 struct Shared final : A::Shared, ProducedFrom<A::NetworkUnit> {
-   LANGULUS(ABSTRACT) false;
-   LANGULUS(PRODUCER) A::NetworkUnit;
+   using CTTI_Abstract = No;
+   using CTTI_Producer = A::NetworkUnit;
    LANGULUS_BASES(A::Shared);
 
 public:

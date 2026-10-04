@@ -17,7 +17,7 @@
 /// Manages and produces clients/servers                                      
 ///                                                                           
 struct Network final : A::Network {
-   LANGULUS(ABSTRACT) false;
+   using CTTI_Abstract = No;
    LANGULUS_BASES(A::Network);
    LANGULUS_VERBS(Verbs::Create);
 

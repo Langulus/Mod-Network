@@ -17,8 +17,8 @@
 /// Produces shared objects and syncronizes them with all connected clients   
 ///                                                                           
 struct Server final : A::Server, ProducedFrom<Network> {
-   LANGULUS(ABSTRACT) false;
-   LANGULUS(PRODUCER) Network;
+   using CTTI_Abstract = No;
+   using CTTI_Producer = Network;
    LANGULUS_BASES(A::Server);
    LANGULUS_VERBS(Verbs::Create);
 
