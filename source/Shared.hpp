@@ -6,8 +6,8 @@
 /// SPDX-License-Identifier: GPL-3.0-or-later                                 
 ///                                                                           
 #pragma once
-#include "Common.hpp"
-#include <Langulus/Flow/Producible.hpp>
+#include "Export.hpp"
+#include <Langulus/Producible.hpp>
 
 
 ///                                                                           
@@ -15,13 +15,13 @@
 ///                                                                           
 /// Dispatches any events on the network.                                     
 ///                                                                           
-struct Shared final : A::Shared, ProducedFrom<A::NetworkUnit> {
-   using CTTI_Abstract = No;
-   using CTTI_Producer = A::NetworkUnit;
-   LANGULUS_BASES(A::Shared);
+struct Shared final : Things::Shared, ProducedFrom<Things::NetworkPart> {
+   using CTTI_Abstract  = No;
+   using CTTI_Producer  = Things::NetworkPart;
+   using CTTI_Bases     = Things::Shared;
 
 public:
-   Shared(A::NetworkUnit*, Many const&);
+   Shared(Things::NetworkPart*, Many const&);
    
    void Refresh();
 };

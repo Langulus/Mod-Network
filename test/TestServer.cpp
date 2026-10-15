@@ -5,7 +5,7 @@
 ///                                                                           
 /// SPDX-License-Identifier: GPL-3.0-or-later                                 
 ///                                                                           
-#include <Langulus/Network.hpp>
+#include <Langulus/CppAPI/Network.hpp>
 #include <Langulus/Testing.hpp>
 
 
@@ -19,7 +19,7 @@ SCENARIO("Server creation", "[network]") {
 
          WHEN("The Server and Shared created via abstractions") {
             auto server = root.CreateUnit<A::Server>();
-            auto shared = root.CreateUnit<A::Shared>();
+            auto shared = root.CreateUnit<Things::Shared>();
 
             // Update once                                              
             root.Update({});
@@ -30,7 +30,7 @@ SCENARIO("Server creation", "[network]") {
             REQUIRE(server.IsSparse());
 
             REQUIRE(shared.GetCount() == 1);
-            REQUIRE(shared.CastsTo<A::Shared>(1));
+            REQUIRE(shared.CastsTo<Things::Shared>(1));
             REQUIRE(shared.IsSparse());
 
             REQUIRE(root.GetUnits().GetCount() == 2);
@@ -38,8 +38,8 @@ SCENARIO("Server creation", "[network]") {
 
       #if LANGULUS_FEATURE(MANAGED_REFLECTION)
          WHEN("The Server and Shared created via tokens") {
-            auto server = root.CreateUnitToken("Server");
-            auto shared = root.CreateUnitToken("Shared");
+            auto server = root.CreatePartToken("Server");
+            auto shared = root.CreatePartToken("Shared");
 
             // Update once                                              
             root.Update({});
@@ -50,7 +50,7 @@ SCENARIO("Server creation", "[network]") {
             REQUIRE(server.IsSparse());
 
             REQUIRE(shared.GetCount() == 1);
-            REQUIRE(shared.CastsTo<A::Shared>(1));
+            REQUIRE(shared.CastsTo<Things::Shared>(1));
             REQUIRE(shared.IsSparse());
 
             REQUIRE(root.GetUnits().GetCount() == 2);
