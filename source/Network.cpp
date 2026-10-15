@@ -34,7 +34,7 @@ void Network::Teardown() {
 ///   @param deltaTime - time between updates                                 
 ///   @return false if the UI requested exit                                  
 bool Network::Update(Time) {
-   LANGULUS(PROFILE);
+   LglsProfile();
    return true;
 }
 
