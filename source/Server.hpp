@@ -16,10 +16,10 @@
 ///                                                                           
 /// Produces shared objects and syncronizes them with all connected clients   
 ///                                                                           
-struct Server final : A::Server, ProducedFrom<Network> {
+struct Server final : Things::Server, ProducedFrom<Network> {
    using CTTI_Abstract = No;
    using CTTI_Producer = Network;
-   LANGULUS_BASES(A::Server);
+   LANGULUS_BASES(Things::Server);
    LANGULUS_VERBS(Verbs::Create);
 
 private:

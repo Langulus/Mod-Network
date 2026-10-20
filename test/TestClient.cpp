@@ -18,7 +18,7 @@ SCENARIO("Client creation", "[network]") {
          auto root = Thing::Root<false>("Network");
 
          WHEN("The Client and Shared created via abstractions") {
-            auto client = root.CreateUnit<A::Client>();
+            auto client = root.CreateUnit<Things::Client>();
             auto shared = root.CreateUnit<Things::Shared>();
 
             // Update once                                              
@@ -26,7 +26,7 @@ SCENARIO("Client creation", "[network]") {
             root.DumpHierarchy();
 
             REQUIRE(client.GetCount() == 1);
-            REQUIRE(client.CastsTo<A::Client>(1));
+            REQUIRE(client.CastsTo<Things::Client>(1));
             REQUIRE(client.IsSparse());
 
             REQUIRE(shared.GetCount() == 1);
@@ -46,7 +46,7 @@ SCENARIO("Client creation", "[network]") {
             root.DumpHierarchy();
 
             REQUIRE(client.GetCount() == 1);
-            REQUIRE(client.CastsTo<A::Client>(1));
+            REQUIRE(client.CastsTo<Things::Client>(1));
             REQUIRE(client.IsSparse());
 
             REQUIRE(shared.GetCount() == 1);

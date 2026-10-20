@@ -16,9 +16,9 @@
 ///                                                                           
 /// Manages and produces clients/servers                                      
 ///                                                                           
-struct Network final : A::Network {
+struct Network final : Things::Network {
    using CTTI_Abstract = No;
-   LANGULUS_BASES(A::Network);
+   LANGULUS_BASES(Things::Network);
    LANGULUS_VERBS(Verbs::Create);
 
 private:

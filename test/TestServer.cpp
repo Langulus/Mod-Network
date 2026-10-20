@@ -18,7 +18,7 @@ SCENARIO("Server creation", "[network]") {
          auto root = Thing::Root<false>("Network");
 
          WHEN("The Server and Shared created via abstractions") {
-            auto server = root.CreateUnit<A::Server>();
+            auto server = root.CreateUnit<Things::Server>();
             auto shared = root.CreateUnit<Things::Shared>();
 
             // Update once                                              
@@ -26,7 +26,7 @@ SCENARIO("Server creation", "[network]") {
             root.DumpHierarchy();
 
             REQUIRE(server.GetCount() == 1);
-            REQUIRE(server.CastsTo<A::Server>(1));
+            REQUIRE(server.CastsTo<Things::Server>(1));
             REQUIRE(server.IsSparse());
 
             REQUIRE(shared.GetCount() == 1);
@@ -46,7 +46,7 @@ SCENARIO("Server creation", "[network]") {
             root.DumpHierarchy();
 
             REQUIRE(server.GetCount() == 1);
-            REQUIRE(server.CastsTo<A::Server>(1));
+            REQUIRE(server.CastsTo<Things::Server>(1));
             REQUIRE(server.IsSparse());
 
             REQUIRE(shared.GetCount() == 1);
