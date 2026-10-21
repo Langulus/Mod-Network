@@ -13,7 +13,7 @@
 ///   @param producer - the system producer                                   
 ///   @param descriptor - instructions for configuring the GUI                
 Client::Client(Network* producer, Many const& descriptor)
-   : Resolvable   {this}
+   : Downcastable   {this}
    , ProducedFrom {producer, descriptor} {
    VERBOSE_NETWORK("Initializing...");
    Couple(descriptor);

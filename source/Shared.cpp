@@ -14,7 +14,7 @@
 ///   @param producer - the producer                                          
 ///   @param descriptor - instructions for configuring the shared object      
 Shared::Shared(Things::NetworkPart* producer, Many const& descriptor)
-   : Resolvable   {this}
+   : Downcastable   {this}
    , ProducedFrom {producer, descriptor} {
    VERBOSE_NETWORK("Initializing...");
    Couple(descriptor);
